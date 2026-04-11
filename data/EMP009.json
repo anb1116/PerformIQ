@@ -1,0 +1,54 @@
+{
+  "employee_id": "EMP009",
+  "name": "Neha Kulkarni",
+  "role": "Product Manager",
+  "department": "Product",
+  "manager": "Amit Desai",
+  "review_period": "Q1 2026",
+  "hr_data": {
+    "goals_set": 6,
+    "goals_completed": 4,
+    "goals_in_progress": 2,
+    "goals_missed": 0,
+    "attendance_percentage": 96.1,
+    "leaves_taken": 4,
+    "last_rating": 3.6,
+    "years_experience": 7,
+    "joining_date": "2019-04-05"
+  },
+  "jira_data": {
+    "tickets_closed": 29,
+    "tickets_in_progress": 5,
+    "bugs_reported_against": 2,
+    "sprint_velocity_avg": 6.7,
+    "on_time_delivery_percent": 89,
+    "critical_issues_resolved": 1,
+    "collaboration_tickets": 12
+  },
+  "github_data": {
+    "total_commits": 16,
+    "prs_merged": 3,
+    "prs_reviewed": 8,
+    "code_review_comments": 14,
+    "lines_added": 410,
+    "lines_deleted": 165,
+    "repositories_contributed": 2
+  },
+  "confluence_data": {
+    "docs_created": 8,
+    "docs_updated": 15,
+    "pages_viewed_by_others": 318,
+    "comments_on_others_docs": 20
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 17,
+    "messages_sent": 322,
+    "channels_active_in": 8,
+    "kudos_received": 5,
+    "kudos_given": 8
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "pending"
+}

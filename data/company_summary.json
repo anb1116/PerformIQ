@@ -1,0 +1,15 @@
+{
+  "company": "TechNova Pvt Ltd",
+  "total_employees": 10,
+  "review_period": "Q1 2026",
+  "review_deadline": "2026-04-20",
+  "reviews_completed": 0,
+  "reviews_pending": 10,
+  "departments": [
+    "Engineering",
+    "Sales",
+    "Operations",
+    "HR",
+    "Product"
+  ]
+}

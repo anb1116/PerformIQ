@@ -1,0 +1,58 @@
+{
+  "employee_id": "EMP003",
+  "name": "Sneha Patil",
+  "role": "DevOps Engineer",
+  "department": "Engineering",
+  "manager": "Amit Desai",
+  "review_period": "Q1 2026",
+  "hr_data": {
+    "goals_set": 5,
+    "goals_completed": 5,
+    "goals_in_progress": 0,
+    "goals_missed": 0,
+    "attendance_percentage": 98.1,
+    "leaves_taken": 2,
+    "last_rating": 4.3,
+    "years_experience": 5,
+    "joining_date": "2021-06-21"
+  },
+  "jira_data": {
+    "tickets_closed": 46,
+    "tickets_in_progress": 2,
+    "bugs_reported_against": 1,
+    "sprint_velocity_avg": 9.4,
+    "on_time_delivery_percent": 95,
+    "critical_issues_resolved": 5,
+    "collaboration_tickets": 9
+  },
+  "github_data": {
+    "total_commits": 71,
+    "prs_merged": 14,
+    "prs_reviewed": 18,
+    "code_review_comments": 36,
+    "lines_added": 2025,
+    "lines_deleted": 890,
+    "repositories_contributed": 5
+  },
+  "confluence_data": {
+    "docs_created": 5,
+    "docs_updated": 9,
+    "pages_viewed_by_others": 198,
+    "comments_on_others_docs": 16
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 12,
+    "messages_sent": 312,
+    "channels_active_in": 8,
+    "kudos_received": 9,
+    "kudos_given": 8
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": 4.0,
+  "review_status": "completed",
+  "review_text": "PERFORMANCE SUMMARY:\nSneha Patil delivered an overall score of 8.4/10 for Q1 2026, with strong delivery (9.3) and quality (8.7). The employee closed 46 Jira tickets with 95% on-time delivery and contributed 71 commits.\n\nKEY STRENGTHS:\n- Strong execution with 46 tickets closed.\n- Solid engineering output with 14 merged PRs and 18 PR reviews.\n- Knowledge sharing through 5 docs created and 9 updates.\n\nAREAS FOR IMPROVEMENT:\n- Improve cross-functional documentation visibility and consistency.\n- Continue focusing on preventive quality practices to lower rework risk.\n\nRECOMMENDED RATING: 4.0 / 5.0\nRECOMMENDED BAND: Exceeds Expectations",
+  "recommended_band": "Meets Expectations",
+  "reviewer_id": "MGR001",
+  "review_timestamp": "2026-04-11T10:34:33"
+}

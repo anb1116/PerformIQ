@@ -1,0 +1,62 @@
+{
+  "employee_id": "EMP005",
+  "name": "Kavya Reddy",
+  "role": "Sales Executive",
+  "department": "Sales",
+  "manager": "Neha Kulkarni",
+  "review_period": "Q1 2026",
+  "hr_data": {
+    "goals_set": 6,
+    "goals_completed": 5,
+    "goals_in_progress": 1,
+    "goals_missed": 0,
+    "attendance_percentage": 96.9,
+    "leaves_taken": 4,
+    "last_rating": 4.1,
+    "years_experience": 6,
+    "joining_date": "2020-08-03"
+  },
+  "jira_data": {
+    "tickets_closed": 7,
+    "tickets_in_progress": 1,
+    "bugs_reported_against": 0,
+    "sprint_velocity_avg": 2.1,
+    "on_time_delivery_percent": 90,
+    "critical_issues_resolved": 0,
+    "collaboration_tickets": 3
+  },
+  "github_data": {
+    "total_commits": 3,
+    "prs_merged": 0,
+    "prs_reviewed": 0,
+    "code_review_comments": 1,
+    "lines_added": 45,
+    "lines_deleted": 18,
+    "repositories_contributed": 1
+  },
+  "confluence_data": {
+    "docs_created": 3,
+    "docs_updated": 5,
+    "pages_viewed_by_others": 122,
+    "comments_on_others_docs": 9
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 15,
+    "messages_sent": 301,
+    "channels_active_in": 7,
+    "kudos_received": 6,
+    "kudos_given": 7
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "pending",
+  "crm_data": {
+    "leads_assigned": 48,
+    "leads_converted": 19,
+    "follow_ups_completed": 66,
+    "revenue_generated_lakhs": 26.4,
+    "client_meetings": 27,
+    "pipeline_health_score": 86
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "employee_id": "EMP002",
+  "name": "Rahul Mehta",
+  "role": "Software Engineer",
+  "department": "Engineering",
+  "manager": "Amit Desai",
+  "review_period": "Q1 2026",
+  "hr_data": {
+    "goals_set": 4,
+    "goals_completed": 3,
+    "goals_in_progress": 1,
+    "goals_missed": 0,
+    "attendance_percentage": 95.8,
+    "leaves_taken": 5,
+    "last_rating": 3.4,
+    "years_experience": 2,
+    "joining_date": "2023-01-10"
+  },
+  "jira_data": {
+    "tickets_closed": 33,
+    "tickets_in_progress": 4,
+    "bugs_reported_against": 3,
+    "sprint_velocity_avg": 7.8,
+    "on_time_delivery_percent": 86,
+    "critical_issues_resolved": 1,
+    "collaboration_tickets": 5
+  },
+  "github_data": {
+    "total_commits": 45,
+    "prs_merged": 7,
+    "prs_reviewed": 13,
+    "code_review_comments": 26,
+    "lines_added": 1310,
+    "lines_deleted": 520,
+    "repositories_contributed": 3
+  },
+  "confluence_data": {
+    "docs_created": 2,
+    "docs_updated": 5,
+    "pages_viewed_by_others": 104,
+    "comments_on_others_docs": 10
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 19,
+    "messages_sent": 214,
+    "channels_active_in": 6,
+    "kudos_received": 3,
+    "kudos_given": 4
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "approved_by_hr"
+}

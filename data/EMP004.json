@@ -1,0 +1,62 @@
+{
+  "employee_id": "EMP004",
+  "name": "Arjun Nair",
+  "role": "Sales Executive",
+  "department": "Sales",
+  "manager": "Kavya Reddy",
+  "review_period": "Q1 2026",
+  "hr_data": {
+    "goals_set": 6,
+    "goals_completed": 4,
+    "goals_in_progress": 1,
+    "goals_missed": 1,
+    "attendance_percentage": 94.2,
+    "leaves_taken": 6,
+    "last_rating": 3.2,
+    "years_experience": 4,
+    "joining_date": "2021-11-08"
+  },
+  "jira_data": {
+    "tickets_closed": 6,
+    "tickets_in_progress": 1,
+    "bugs_reported_against": 0,
+    "sprint_velocity_avg": 1.9,
+    "on_time_delivery_percent": 82,
+    "critical_issues_resolved": 0,
+    "collaboration_tickets": 2
+  },
+  "github_data": {
+    "total_commits": 4,
+    "prs_merged": 1,
+    "prs_reviewed": 0,
+    "code_review_comments": 2,
+    "lines_added": 70,
+    "lines_deleted": 25,
+    "repositories_contributed": 1
+  },
+  "confluence_data": {
+    "docs_created": 2,
+    "docs_updated": 4,
+    "pages_viewed_by_others": 89,
+    "comments_on_others_docs": 8
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 16,
+    "messages_sent": 265,
+    "channels_active_in": 6,
+    "kudos_received": 4,
+    "kudos_given": 6
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "pending",
+  "crm_data": {
+    "leads_assigned": 42,
+    "leads_converted": 14,
+    "follow_ups_completed": 58,
+    "revenue_generated_lakhs": 18.7,
+    "client_meetings": 21,
+    "pipeline_health_score": 74
+  }
+}

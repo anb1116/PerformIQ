@@ -1,0 +1,54 @@
+{
+  "employee_id": "EMP010",
+  "name": "Amit Desai",
+  "role": "Tech Lead",
+  "department": "Engineering",
+  "manager": "CTO Office",
+  "review_period": "Q1 2026",
+  "hr_data": {
+    "goals_set": 6,
+    "goals_completed": 5,
+    "goals_in_progress": 1,
+    "goals_missed": 0,
+    "attendance_percentage": 97.0,
+    "leaves_taken": 3,
+    "last_rating": 3.5,
+    "years_experience": 10,
+    "joining_date": "2016-07-18"
+  },
+  "jira_data": {
+    "tickets_closed": 37,
+    "tickets_in_progress": 4,
+    "bugs_reported_against": 2,
+    "sprint_velocity_avg": 8.8,
+    "on_time_delivery_percent": 93,
+    "critical_issues_resolved": 4,
+    "collaboration_tickets": 15
+  },
+  "github_data": {
+    "total_commits": 58,
+    "prs_merged": 10,
+    "prs_reviewed": 31,
+    "code_review_comments": 67,
+    "lines_added": 1540,
+    "lines_deleted": 730,
+    "repositories_contributed": 5
+  },
+  "confluence_data": {
+    "docs_created": 6,
+    "docs_updated": 14,
+    "pages_viewed_by_others": 275,
+    "comments_on_others_docs": 24
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 10,
+    "messages_sent": 368,
+    "channels_active_in": 9,
+    "kudos_received": 6,
+    "kudos_given": 12
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "pending"
+}

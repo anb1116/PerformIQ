@@ -1,0 +1,54 @@
+{
+  "employee_id": "EMP001",
+  "name": "Priya Sharma",
+  "role": "Software Engineer",
+  "department": "Engineering",
+  "manager": "Amit Desai",
+  "review_period": "Q1 2026",
+  "hr_data": {
+    "goals_set": 5,
+    "goals_completed": 4,
+    "goals_in_progress": 1,
+    "goals_missed": 0,
+    "attendance_percentage": 97.4,
+    "leaves_taken": 3,
+    "last_rating": 3.9,
+    "years_experience": 3,
+    "joining_date": "2022-03-15"
+  },
+  "jira_data": {
+    "tickets_closed": 41,
+    "tickets_in_progress": 3,
+    "bugs_reported_against": 1,
+    "sprint_velocity_avg": 9.1,
+    "on_time_delivery_percent": 92,
+    "critical_issues_resolved": 3,
+    "collaboration_tickets": 7
+  },
+  "github_data": {
+    "total_commits": 62,
+    "prs_merged": 11,
+    "prs_reviewed": 21,
+    "code_review_comments": 48,
+    "lines_added": 1860,
+    "lines_deleted": 640,
+    "repositories_contributed": 4
+  },
+  "confluence_data": {
+    "docs_created": 3,
+    "docs_updated": 6,
+    "pages_viewed_by_others": 162,
+    "comments_on_others_docs": 14
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 14,
+    "messages_sent": 286,
+    "channels_active_in": 7,
+    "kudos_received": 7,
+    "kudos_given": 6
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "approved_by_hr"
+}
