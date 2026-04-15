@@ -2,7 +2,7 @@ import json
 from datetime import date, datetime
 from typing import Dict, List
 
-from ollama import Client
+from agents.llm_config import ask_flash, ask_pro
 
 try:
     from agents.data_agent import ALL_EMPLOYEES, TEAM_AVERAGES, DataAggregatorAgent
@@ -12,24 +12,11 @@ except ImportError:
 
 class HROrchestratorAgent:
     def __init__(self):
-        self.client = Client(host="http://localhost:11434", timeout=20.0)
-        self.model = "llama3.2:3b"
         self.data_agent = DataAggregatorAgent()
+        # NOTE: Don't rely on import-time globals for "live" dashboards.
+        # The Streamlit app writes JSON to disk; we should reload from disk when needed.
         self.employees = ALL_EMPLOYEES
         self.company_summary_path = self.data_agent.data_dir / "company_summary.json"
-
-    def _call_llama(self, system_prompt: str, user_prompt: str) -> str:
-        try:
-            response = self.client.chat(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-            )
-            return response.get("message", {}).get("content", "").strip()
-        except Exception:
-            return ""
 
     def _get_days_left(self) -> int:
         if not self.company_summary_path.exists():
@@ -42,18 +29,17 @@ class HROrchestratorAgent:
         return max((deadline - date.today()).days, 0)
 
     def _employee_scores(self) -> Dict[str, dict]:
+        employees = self.data_agent.get_all_employees()
         return {
-            employee_id: self.data_agent.get_performance_score(employee)
-            for employee_id, employee in self.employees.items()
+            (employee.get("employee_id") or ""): self.data_agent.get_performance_score(employee)
+            for employee in employees
+            if employee.get("employee_id")
         }
 
     def get_cycle_dashboard(self) -> dict:
-        total = len(self.employees)
-        completed = sum(
-            1
-            for emp in self.employees.values()
-            if emp.get("review_status", "pending") in ("completed", "approved_by_hr")
-        )
+        employees = self.data_agent.get_all_employees()
+        total = len(employees)
+        completed = sum(1 for emp in employees if emp.get("review_status", "pending") in ("completed", "approved_by_hr"))
         pending = total - completed
         completion_rate = f"{round((completed / total) * 100) if total else 0}%"
 
@@ -61,36 +47,42 @@ class HROrchestratorAgent:
         at_risk_reviews = []
         if days_left < 5:
             at_risk_reviews = [
-                emp["name"]
-                for emp in self.employees.values()
+                emp.get("name", "Unknown")
+                for emp in employees
                 if emp.get("review_status", "pending") == "pending"
             ]
 
-        scores = self._employee_scores()
+        scores_by_id = {emp.get("employee_id"): self.data_agent.get_performance_score(emp) for emp in employees if emp.get("employee_id")}
         ranked = sorted(
-            scores.items(), key=lambda item: item[1].get("overall_score", 0.0), reverse=True
+            [(emp, scores_by_id.get(emp.get("employee_id"), {})) for emp in employees],
+            key=lambda item: item[1].get("overall_score", 0.0),
+            reverse=True,
         )
-        high_performers = [
-            self.employees[emp_id]["name"] for emp_id, _ in ranked[:3]
-        ]
-        needs_attention = [
-            self.employees[emp_id]["name"] for emp_id, _ in ranked[-2:]
-        ]
+        high_performers = [emp.get("name", "Unknown") for emp, _ in ranked[:3]]
+        needs_attention = [emp.get("name", "Unknown") for emp, _ in ranked[-2:]] if ranked else []
 
         bias_flags = []
-        for emp_id, employee in self.employees.items():
-            bias = self.data_agent.detect_bias_risk(employee, scores[emp_id])
-            if bias.get("risk_level") == "HIGH":
+        for employee in employees:
+            status = employee.get("review_status", "pending")
+            submitted = status in ("completed", "approved_by_hr")
+            if not submitted:
+                continue
+            emp_id = employee.get("employee_id")
+            if not emp_id:
+                continue
+            bias = self.data_agent.detect_bias_risk(employee, scores_by_id.get(emp_id, {}))
+            if bias.get("risk_level") in ("HIGH", "MEDIUM"):
                 bias_flags.append(
                     {
-                        "employee": employee["name"],
+                        "employee": employee.get("name", "Unknown"),
                         "manager": employee.get("manager", "Unknown"),
                         "message": bias.get("message", ""),
+                        "risk_level": bias.get("risk_level", ""),
                     }
                 )
 
         avg_team_score = round(
-            sum(v.get("overall_score", 0.0) for v in scores.values()) / total, 2
+            sum(v.get("overall_score", 0.0) for v in scores_by_id.values()) / total, 2
         ) if total else 0.0
 
         return {
@@ -134,7 +126,9 @@ class HROrchestratorAgent:
         manager_gaps: Dict[str, List[float]] = {}
         for emp_id, employee in self.employees.items():
             scores = self.data_agent.get_performance_score(employee)
-            manager_rating = float(employee.get("hr_data", {}).get("last_rating", 0.0))
+            manager_rating = self.data_agent._normalize_rating_to_10(
+                employee.get("hr_data", {}).get("last_rating", 0.0)
+            )
             data_score = float(scores.get("overall_score", 0.0))
             gap = data_score - manager_rating
             manager = employee.get("manager", "Unknown")
@@ -191,8 +185,9 @@ class HROrchestratorAgent:
             "Highlight what HR should focus on this week."
         )
 
-        summary = self._call_llama(system_prompt, user_prompt)
-        if summary:
+        prompt = f"{system_prompt}\n\n{user_prompt}"
+        summary = ask_pro(prompt)
+        if summary and not summary.startswith("Error:"):
             return summary
 
         return (
@@ -241,8 +236,9 @@ class HROrchestratorAgent:
             f"pending reviews due in {days} days."
         )
 
-        nudge = self._call_llama(system_prompt, user_prompt)
-        if nudge:
+        prompt = f"{system_prompt}\n\n{user_prompt}"
+        nudge = ask_flash(prompt)
+        if nudge and not nudge.startswith("Error:"):
             return nudge
         return (
             f"Dear {manager_name}, this is a reminder that you have {pending_count} pending "

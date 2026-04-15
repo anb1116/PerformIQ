@@ -1,0 +1,61 @@
+{
+  "employee_id": "MGR002",
+  "name": "Rohan Gupta",
+  "role": "Operations Manager",
+  "department": "Operations",
+  "manager_id": "HR001",
+  "manager_name": "Vikram Joshi",
+  "review_period": "Q1 2026",
+  "review_deadline": "2026-04-20",
+  "hr_data": {
+    "goals_set": 3,
+    "goals_completed": 2,
+    "goals_in_progress": 1,
+    "goals_missed": 0,
+    "attendance_percentage": 93.0,
+    "leaves_taken": 5,
+    "last_rating": 3.7,
+    "years_experience": 8,
+    "joining_date": "2019-02-21"
+  },
+  "jira_data": {
+    "tickets_closed": 20,
+    "tickets_in_progress": 4,
+    "bugs_reported_against": 2,
+    "sprint_velocity_avg": 6.7,
+    "on_time_delivery_percent": 80,
+    "critical_issues_resolved": 2,
+    "collaboration_tickets": 5
+  },
+  "github_data": {
+    "total_commits": 12,
+    "prs_merged": 2,
+    "prs_reviewed": 6,
+    "code_review_comments": 14,
+    "lines_added": 360,
+    "lines_deleted": 140,
+    "repositories_contributed": 2
+  },
+  "confluence_data": {
+    "docs_created": 10,
+    "docs_updated": 11,
+    "pages_viewed_by_others": 220,
+    "comments_on_others_docs": 20
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 19,
+    "messages_sent": 248,
+    "channels_active_in": 7,
+    "kudos_received": 4,
+    "kudos_given": 6
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "pending",
+  "review_text": "",
+  "approval_feedback": "",
+  "hr_notes": "",
+  "hr_approved": false,
+  "hr_approved_timestamp": null
+}

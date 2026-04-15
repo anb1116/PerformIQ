@@ -1,6 +1,5 @@
 streamlit
-langchain
-langchain-community
-ollama
 pandas
 plotly
+google-generativeai
+python-dotenv

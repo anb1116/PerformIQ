@@ -1,0 +1,61 @@
+{
+  "employee_id": "HR001",
+  "name": "Vikram Joshi",
+  "role": "HR Manager",
+  "department": "HR",
+  "manager_id": "HR001",
+  "manager_name": "Vikram Joshi",
+  "review_period": "Q1 2026",
+  "review_deadline": "2026-04-20",
+  "hr_data": {
+    "goals_set": 3,
+    "goals_completed": 3,
+    "goals_in_progress": 0,
+    "goals_missed": 0,
+    "attendance_percentage": 97.0,
+    "leaves_taken": 2,
+    "last_rating": 3.9,
+    "years_experience": 11,
+    "joining_date": "2016-04-18"
+  },
+  "jira_data": {
+    "tickets_closed": 14,
+    "tickets_in_progress": 2,
+    "bugs_reported_against": 0,
+    "sprint_velocity_avg": 6.0,
+    "on_time_delivery_percent": 89,
+    "critical_issues_resolved": 1,
+    "collaboration_tickets": 4
+  },
+  "github_data": {
+    "total_commits": 6,
+    "prs_merged": 1,
+    "prs_reviewed": 3,
+    "code_review_comments": 6,
+    "lines_added": 180,
+    "lines_deleted": 60,
+    "repositories_contributed": 1
+  },
+  "confluence_data": {
+    "docs_created": 12,
+    "docs_updated": 14,
+    "pages_viewed_by_others": 340,
+    "comments_on_others_docs": 26
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 12,
+    "messages_sent": 390,
+    "channels_active_in": 10,
+    "kudos_received": 8,
+    "kudos_given": 9
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "pending",
+  "review_text": "",
+  "approval_feedback": "",
+  "hr_notes": "",
+  "hr_approved": false,
+  "hr_approved_timestamp": null
+}

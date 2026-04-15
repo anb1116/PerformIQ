@@ -1,0 +1,100 @@
+[
+  {
+    "recipient_id": "MGR001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:30:46"
+  },
+  {
+    "recipient_id": "EMP001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:30:46"
+  },
+  {
+    "recipient_id": "MGR001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:30:43"
+  },
+  {
+    "recipient_id": "EMP001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:30:43"
+  },
+  {
+    "recipient_id": "MGR001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:20"
+  },
+  {
+    "recipient_id": "EMP001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:20"
+  },
+  {
+    "recipient_id": "MGR001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:18"
+  },
+  {
+    "recipient_id": "EMP001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:18"
+  },
+  {
+    "recipient_id": "MGR001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:13"
+  },
+  {
+    "recipient_id": "EMP001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:13"
+  },
+  {
+    "recipient_id": "MGR001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:10"
+  },
+  {
+    "recipient_id": "EMP001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:28:10"
+  },
+  {
+    "recipient_id": "MGR001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:16:40"
+  },
+  {
+    "recipient_id": "EMP001",
+    "actor_id": "HR001",
+    "kind": "approval",
+    "message": "HR approved and published review for Priya Sharma.",
+    "ts": "2026-04-14 14:16:40"
+  }
+]

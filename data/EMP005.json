@@ -58,5 +58,11 @@
     "revenue_generated_lakhs": 26.4,
     "client_meetings": 27,
     "pipeline_health_score": 86
-  }
+  },
+  "review_text": "",
+  "review_timestamp": null,
+  "approval_feedback": "",
+  "hr_notes": "",
+  "hr_approved": false,
+  "hr_approved_timestamp": null
 }

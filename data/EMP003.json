@@ -49,10 +49,12 @@
   },
   "manager_notes": "",
   "self_assessment": "",
-  "final_rating": 4.0,
-  "review_status": "completed",
-  "review_text": "PERFORMANCE SUMMARY:\nSneha Patil delivered an overall score of 8.4/10 for Q1 2026, with strong delivery (9.3) and quality (8.7). The employee closed 46 Jira tickets with 95% on-time delivery and contributed 71 commits.\n\nKEY STRENGTHS:\n- Strong execution with 46 tickets closed.\n- Solid engineering output with 14 merged PRs and 18 PR reviews.\n- Knowledge sharing through 5 docs created and 9 updates.\n\nAREAS FOR IMPROVEMENT:\n- Improve cross-functional documentation visibility and consistency.\n- Continue focusing on preventive quality practices to lower rework risk.\n\nRECOMMENDED RATING: 4.0 / 5.0\nRECOMMENDED BAND: Exceeds Expectations",
-  "recommended_band": "Meets Expectations",
-  "reviewer_id": "MGR001",
-  "review_timestamp": "2026-04-11T10:34:33"
+  "final_rating": null,
+  "review_status": "pending",
+  "review_text": "",
+  "review_timestamp": null,
+  "approval_feedback": "",
+  "hr_notes": "",
+  "hr_approved": false,
+  "hr_approved_timestamp": null
 }

@@ -1,7 +1,7 @@
 from datetime import date, datetime
 from typing import Dict
 
-from ollama import Client
+from agents.llm_config import ask_flash
 
 try:
     from agents.data_agent import ALL_EMPLOYEES, TEAM_AVERAGES, DataAggregatorAgent
@@ -11,22 +11,7 @@ except ImportError:
 
 class EmployeeCoachAgent:
     def __init__(self):
-        self.client = Client(host="http://localhost:11434", timeout=20.0)
-        self.model = "llama3.2:3b"
         self.data_agent = DataAggregatorAgent()
-
-    def _call_llama(self, system_prompt: str, user_prompt: str) -> str:
-        try:
-            response = self.client.chat(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-            )
-            return response.get("message", {}).get("content", "").strip()
-        except Exception:
-            return ""
 
     def generate_self_assessment(self, employee_id: str) -> str:
         employee_data = self.data_agent.load_employee(employee_id)
@@ -55,9 +40,10 @@ class EmployeeCoachAgent:
             "[1 specific goal]"
         )
 
-        drafted = self._call_llama(system_prompt, user_prompt)
-        if drafted:
-            return drafted
+        prompt = f"{system_prompt}\n\n{user_prompt}"
+        drafted = ask_flash(prompt)
+        if drafted and (not drafted.startswith("Error:")) and drafted.strip():
+            return drafted.strip()
 
         jira = employee_data.get("jira_data", {})
         github = employee_data.get("github_data", {})
@@ -128,17 +114,18 @@ class EmployeeCoachAgent:
             "Be empathetic, clear, and constructive. Never be harsh. Always end on a positive note."
         )
         user_prompt = (
-            f"Explain to the employee why they received a rating of {given_rating}/5.0\n"
+            f"Explain to the employee why they received a rating of {given_rating}/10.0\n"
             f"based on their performance data:\n{profile_summary}\n"
             "Use specific data points to justify the rating. 100 words max."
         )
 
-        explanation = self._call_llama(system_prompt, user_prompt)
-        if explanation:
+        prompt = f"{system_prompt}\n\n{user_prompt}"
+        explanation = ask_flash(prompt)
+        if explanation and not explanation.startswith("Error:"):
             return explanation
 
         return (
-            f"You received a rating of {given_rating}/5.0 based on a blend of outcomes, quality, and team impact. "
+            f"You received a rating of {given_rating}/10.0 based on a blend of outcomes, quality, and team impact. "
             f"Your delivery and execution were supported by clear metrics such as "
             f"{employee_data.get('jira_data', {}).get('tickets_closed', 0)} tickets closed and "
             f"{employee_data.get('jira_data', {}).get('on_time_delivery_percent', 0)}% on-time delivery, along with "

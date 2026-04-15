@@ -1,0 +1,33 @@
+{
+  "company_name": "TechNova Pvt Ltd",
+  "review_period": "Q1 2026",
+  "review_deadline": "2026-04-20",
+  "total_employees": 10,
+  "departments": {
+    "Engineering": {
+      "head": "MGR001",
+      "members": [
+        "EMP001",
+        "EMP002",
+        "EMP003"
+      ]
+    },
+    "Operations": {
+      "head": "MGR002",
+      "members": [
+        "EMP004",
+        "EMP005"
+      ]
+    },
+    "Sales": {
+      "head": "MGR003",
+      "members": [
+        "EMP006"
+      ]
+    },
+    "HR": {
+      "head": "HR001",
+      "members": []
+    }
+  }
+}

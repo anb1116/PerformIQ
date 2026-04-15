@@ -1,6 +1,5 @@
 from typing import Dict, List, Tuple
-
-from ollama import Client
+from agents.llm_config import ask_flash, ask_pro
 
 try:
     from agents.data_agent import DataAggregatorAgent, TEAM_AVERAGES
@@ -10,34 +9,19 @@ except ImportError:
 
 class ManagerAssistantAgent:
     def __init__(self):
-        self.client = Client(host="http://localhost:11434", timeout=20.0)
-        self.model = "llama3.2:3b"
         self.data_agent = DataAggregatorAgent()
 
     def suggest_rating(self, scores: dict) -> tuple:
         overall = float(scores.get("overall_score", 0.0))
         if overall >= 9.0:
-            return 5.0, "Exceptional"
+            return 9.5, "Exceptional"
         if overall >= 7.5:
-            return 4.0, "Exceeds Expectations"
+            return 8.5, "Exceeds Expectations"
         if overall >= 6.0:
-            return 3.0, "Meets Expectations"
+            return 7.0, "Meets Expectations"
         if overall >= 4.0:
-            return 2.0, "Below Expectations"
-        return 1.0, "Needs Improvement"
-
-    def _call_llama(self, system_prompt: str, user_prompt: str) -> str:
-        try:
-            response = self.client.chat(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-            )
-            return response.get("message", {}).get("content", "").strip()
-        except Exception:
-            return ""
+            return 5.0, "Below Expectations"
+        return 3.0, "Needs Improvement"
 
     def generate_draft_review(self, employee_id: str) -> dict:
         employee_data = self.data_agent.load_employee(employee_id)
@@ -68,13 +52,14 @@ class ManagerAssistantAgent:
             "[3 bullet points with specific data evidence]\n\n"
             "AREAS FOR IMPROVEMENT:\n"
             "[2 bullet points with constructive suggestions]\n\n"
-            "RECOMMENDED RATING: [X.X / 5.0]\n"
+            "RECOMMENDED RATING: [X.X / 10.0]\n"
             "RECOMMENDED BAND: [Exceptional/Exceeds Expectations/Meets Expectations/Below Expectations]"
         )
 
-        review_text = self._call_llama(system_prompt, user_prompt)
+        prompt = f"{system_prompt}\n\n{user_prompt}"
+        review_text = ask_pro(prompt)
 
-        if not review_text:
+        if (not review_text) or review_text.startswith("Error:"):
             review_text = (
                 "PERFORMANCE SUMMARY:\n"
                 f"{employee_data['name']} delivered an overall score of {scores['overall_score']:.1f}/10 "
@@ -92,7 +77,7 @@ class ManagerAssistantAgent:
                 "AREAS FOR IMPROVEMENT:\n"
                 "- Improve cross-functional documentation visibility and consistency.\n"
                 "- Continue focusing on preventive quality practices to lower rework risk.\n\n"
-                f"RECOMMENDED RATING: {recommended_rating:.1f} / 5.0\n"
+                f"RECOMMENDED RATING: {recommended_rating:.1f} / 10.0\n"
                 f"RECOMMENDED BAND: {recommended_band}"
             )
 
@@ -122,8 +107,9 @@ class ManagerAssistantAgent:
             "to support the review."
         )
 
-        nudge = self._call_llama(system_prompt, user_prompt)
-        if nudge:
+        prompt = f"{system_prompt}\n\n{user_prompt}"
+        nudge = ask_flash(prompt)
+        if nudge and not nudge.startswith("Error:"):
             return nudge
 
         return (

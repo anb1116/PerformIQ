@@ -1,0 +1,69 @@
+{
+  "employee_id": "MGR003",
+  "name": "Arjun Nair",
+  "role": "Sales Manager",
+  "department": "Sales",
+  "manager_id": "HR001",
+  "manager_name": "Vikram Joshi",
+  "review_period": "Q1 2026",
+  "review_deadline": "2026-04-20",
+  "hr_data": {
+    "goals_set": 4,
+    "goals_completed": 3,
+    "goals_in_progress": 1,
+    "goals_missed": 0,
+    "attendance_percentage": 92.0,
+    "leaves_taken": 6,
+    "last_rating": 4.1,
+    "years_experience": 10,
+    "joining_date": "2017-10-12"
+  },
+  "jira_data": {
+    "tickets_closed": 10,
+    "tickets_in_progress": 2,
+    "bugs_reported_against": 0,
+    "sprint_velocity_avg": 5.5,
+    "on_time_delivery_percent": 87,
+    "critical_issues_resolved": 1,
+    "collaboration_tickets": 4
+  },
+  "github_data": {
+    "total_commits": 4,
+    "prs_merged": 1,
+    "prs_reviewed": 2,
+    "code_review_comments": 4,
+    "lines_added": 95,
+    "lines_deleted": 40,
+    "repositories_contributed": 1
+  },
+  "confluence_data": {
+    "docs_created": 3,
+    "docs_updated": 7,
+    "pages_viewed_by_others": 104,
+    "comments_on_others_docs": 12
+  },
+  "slack_data": {
+    "avg_response_time_minutes": 18,
+    "messages_sent": 212,
+    "channels_active_in": 6,
+    "kudos_received": 5,
+    "kudos_given": 5
+  },
+  "manager_notes": "",
+  "self_assessment": "",
+  "final_rating": null,
+  "review_status": "pending",
+  "review_text": "",
+  "approval_feedback": "",
+  "hr_notes": "",
+  "hr_approved": false,
+  "hr_approved_timestamp": null,
+  "crm_data": {
+    "deals_closed": 18,
+    "revenue_generated": 820000,
+    "pipeline_value": 1900000,
+    "client_meetings": 49,
+    "proposals_sent": 24,
+    "conversion_rate": 71
+  }
+}
